@@ -1,0 +1,31 @@
+openapi: 3.0.0
+info:
+  title: 3D Masks
+  description: |
+    This is a sample API server
+  version: 1.0.0
+servers:
+- url: http://5000-w5g2wogyxe15327yme2jsv44b.gcp.ainetwork.ai
+  description: 3D Masks
+- url: https://petstore.swagger.io/v2
+tags:
+- name: 3d mask
+  description: Everything about your Pets
+paths:
+  /masks:
+    post:
+      tags:
+      - masks
+      summary: uploads an image
+      operationId: uploadFile
+      requestBody:
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        "200":
+          description: successful operation
+      x-swagger-router-controller: Masks
+components: {}
